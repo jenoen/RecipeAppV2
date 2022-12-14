@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function RecipeCreate({ createRecipe }) {
-  // initial Form State
+  // initial Form State - so we can reset the form to these "" values
   const initialFormState = {
     name: "",
     cuisine: "",
@@ -10,10 +10,13 @@ function RecipeCreate({ createRecipe }) {
     preparation: "",
   };
 
-  // stores the States in "formData"
+  // stores the States in "formData" - so we can store the submitted info in formData
   const [formData, setFormData] = useState({ ...initialFormState });
 
   // TODO: When the form is submitted, a new recipe should be created, and the form contents cleared.
+  // these handles when user hits "Submit"
+  // createRecipe:: sends all the info from formData stored and setRecipe prop in app.js
+  // setFormData:: resets the Form/formData to ""
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Submitted:", formData);
@@ -23,7 +26,7 @@ function RecipeCreate({ createRecipe }) {
 
   // TODO: Add the required input and textarea form elements.
   // TODO: Add the required submit and change handlers
-  // after user inputs in each form field.. this handleChange updates the formData Storage
+  // after user inputs in each form field.. this handleChange updates the formData Storage (before hitting Submit)
   const handleChange = ({ target }) => {
     const value = target.value;
     setFormData({
@@ -34,6 +37,7 @@ function RecipeCreate({ createRecipe }) {
 
   return (
     /* add handleSubmit so that when a Submit button is clicked...there's an action! */
+    /* add onChange so that when user edits fields.. it'll update formData */
     <form name="create" onSubmit={handleSubmit}>
       <table>
         <tbody>
@@ -47,6 +51,7 @@ function RecipeCreate({ createRecipe }) {
                   placeholder="Name"
                   onChange={handleChange}
                   value={formData.name}
+                  required
                 />
               </label>
             </td>
@@ -59,6 +64,7 @@ function RecipeCreate({ createRecipe }) {
                   placeholder="Cuisine"
                   onChange={handleChange}
                   value={formData.cuisine}
+                  required
                 />
               </label>
             </td>
@@ -71,6 +77,7 @@ function RecipeCreate({ createRecipe }) {
                   placeholder="URL"
                   onChange={handleChange}
                   value={formData.photo}
+                  required
                 />
               </label>
             </td>
@@ -83,6 +90,7 @@ function RecipeCreate({ createRecipe }) {
                   placeholder="Ingredients"
                   onChange={handleChange}
                   value={formData.ingredients}
+                  required
                 ></textarea>
               </label>
             </td>
@@ -95,6 +103,7 @@ function RecipeCreate({ createRecipe }) {
                   placeholder="Preparation"
                   onChange={handleChange}
                   value={formData.preparation}
+                  required
                 ></textarea>
               </label>
             </td>

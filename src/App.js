@@ -30,7 +30,7 @@ function App() {
       <header>
         <h1>Delicious Food Recipes</h1>
       </header>
-      {/* to pass in props for [recipe] and deleteRecipe propFunc and createRecipe propFunc */}
+      {/* to pass in props for [recipe] and deleteRecipe propFunc and createRecipe propFunc so that the other functions are able to use it*/}
       <RecipeList recipes={recipes} deleteRecipe={deleteRecipe} />
       <RecipeCreate createRecipe={createRecipe} />
     </div>

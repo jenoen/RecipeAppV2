@@ -4,37 +4,11 @@ import "./App.css";
 function RecipeList({ recipes, deleteRecipe }) {
   // TODO: Display the list of recipes using the structure of table that is provided.
   // TODO: Create at least one additional component that is used by this component.
-
-  // const recipeTable = () => {
-  //   recipes.map((recipe, index) => (
-  //     <>
-  //       <p className="post" style={{ paddingTop: 10 }}>
-  //         {recipe.type === "Image" ? (
-  //           <img
-  //             src={recipe.content}
-  //             alt="Girl in a jacket"
-  //             width="500"
-  //             height="600"
-  //           />
-  //         ) : (
-  //           recipe.content
-  //         )}
-
-  //         <br />
-  //         <button
-  //           name="delete"
-  //           key={index}
-  //           onClick={() => deleteRecipe(index)}
-  //           style={{ marginTop: 10 }}
-  //         >
-  //           Delete
-  //         </button>
-  //       </p>
-  //     </>
-  //   ));
-  // };
-
   // TODO: Each recipe row must have a delete button - <button name="delete">Delete</button> - that deletes the post when clicked
+
+  // this function is what will be displayed in app.js in the top half
+  // it involves re-mapping the list of recipes given >> rewritten in html/table format
+
 
   return (
     <div className="recipe-list">
